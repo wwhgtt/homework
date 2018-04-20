@@ -1,1 +1,1 @@
-*** homework for GXM
+homework for GXM

@@ -49,6 +49,7 @@
         "webpack-dev-server": "^1.14.0"
     },
     "dependencies": {
+        "antd": "^3.4.1",
         "classnames": "^2.2.3",
         "core-js": "^2.4.0",
         "es6-promise": "^3.0.2",

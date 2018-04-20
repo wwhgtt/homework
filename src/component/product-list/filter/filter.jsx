@@ -1,6 +1,6 @@
 const React = require('react');
 
-import { Form, Button, Row, Col, Input } from 'antd';
+import { Button, Row, Col, Input } from 'antd';
 
 const ButtonGroup = Button.Group;
 const Search = Input.Search;

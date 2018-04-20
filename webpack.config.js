@@ -7,6 +7,9 @@ module.exports = {
   entry: {
     'product-list-entry': [
       './src/product-list.jsx',
+    ],
+    'edit-entry': [
+      './src/edit.jsx',
     ]
   },
   resolve: {
@@ -48,6 +51,14 @@ module.exports = {
         title: 'ProductListApplication',
         filename: 'product-list.html',
         chunks: ['common', 'product-list-entry'],
+        inject: 'body', template: './src/utils/html-webpack-plugin-template.html',
+      }
+    ),
+    new HtmlWebpackPlugin(
+      {
+        title: 'EditApplication',
+        filename: 'edit.html',
+        chunks: ['common', 'edit-entry'],
         inject: 'body', template: './src/utils/html-webpack-plugin-template.html',
       }
     ),

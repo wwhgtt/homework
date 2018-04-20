@@ -1,7 +1,10 @@
 const React = require('react');
 const connect = require('react-redux').connect;
-// const Toast = require('../../component/mui/toast.jsx');
 const actions = require('../../action/product-list/product-list.js');
+
+const Filter = require('../../component/product-list/filter/filter.jsx');
+// const MenuContainer = require('../../component/menuContainer/menuContainer.jsx');
+
 require('./application.scss');
 
 
@@ -9,19 +12,37 @@ const ProductListApplication = React.createClass({
   displayName: 'ProductListApplication',
   propTypes: {
     // MapedActionsToProps
+    fetchMenuList: React.PropTypes.func.isRequired,
     // MapedStatesToProps
+    menuList: React.PropTypes.array.isRequired
+  },
+
+  getInitialState() {
+    return {
+      // 这个list是用作展示的list
+      fakeMenuList: []
+    }
   },
 
   componentDidMount() {
-
+    const { fetchMenuList, menuList } = this.props;
+    fetchMenuList().then(
+      this.setState({
+        fakeMenuList: menuList
+      })
+    )
   },
 
   render() {
-    const {  } = this.props;
+    const { fakeMenuList } = this.state;
 
     return (
       <div className="container">
-        test
+        <Filter />
+        {/* {
+          fakeMenuList && fakeMenuList.length ? 
+            <MenuContainer menuList={fakeMenuList} /> : '暂时无任何匹配数据'
+        } */}
       </div>
     );
   },

@@ -2,7 +2,7 @@ module.exports = {
     path:'/productList/all.json',
     template:{
       data: [{
-        "id": "22",
+        "key": "22",
         "name": "吉林",
         "orderSeq": "1",
         "newId": "220000",
@@ -10,7 +10,7 @@ module.exports = {
         "newName": "吉林省",
         "opened": "FALSE"
       }, {
-        "id": "44",
+        "key": "44",
         "name": "广东",
         "orderSeq": "1",
         "newId": "440000",
@@ -18,7 +18,7 @@ module.exports = {
         "newName": "广东省",
         "opened": "FALSE"
       }, {
-        "id": "23",
+        "key": "23",
         "name": "黑龙江",
         "orderSeq": "1",
         "newId": "230000",
@@ -26,7 +26,7 @@ module.exports = {
         "newName": "黑龙江省",
         "opened": "FALSE"
       }, {
-        "id": "45",
+        "key": "45",
         "name": "广西",
         "orderSeq": "1",
         "newId": "450000",
@@ -34,7 +34,7 @@ module.exports = {
         "newName": "广西壮族自治区",
         "opened": "FALSE"
       }, {
-        "id": "46",
+        "key": "46",
         "name": "海南",
         "orderSeq": "1",
         "newId": "460000",
@@ -42,7 +42,7 @@ module.exports = {
         "newName": "海南省",
         "opened": "FALSE"
       }, {
-        "id": "91",
+        "key": "91",
         "name": "澳门",
         "orderSeq": "1",
         "newId": "820000",
@@ -50,7 +50,7 @@ module.exports = {
         "newName": "澳门特别行政区",
         "opened": "FALSE"
       }, {
-        "id": "71",
+        "key": "71",
         "name": "台湾",
         "orderSeq": "1",
         "newId": "710000",
@@ -58,7 +58,7 @@ module.exports = {
         "newName": "台湾省",
         "opened": "FALSE"
       }, {
-        "id": "50",
+        "key": "50",
         "name": "重庆",
         "orderSeq": "1",
         "newId": "500000",
@@ -66,7 +66,7 @@ module.exports = {
         "newName": "重庆市",
         "opened": "FALSE"
       }, {
-        "id": "72",
+        "key": "72",
         "name": "台湾测试",
         "orderSeq": "1",
         "newId": "720000",
@@ -74,7 +74,7 @@ module.exports = {
         "newName": "台湾测试",
         "opened": "FALSE"
       }, {
-        "id": "51",
+        "key": "51",
         "name": "四川",
         "orderSeq": "1",
         "newId": "510000",
@@ -82,7 +82,7 @@ module.exports = {
         "newName": "四川省",
         "opened": "FALSE"
       }, {
-        "id": "52",
+        "key": "52",
         "name": "贵州",
         "orderSeq": "1",
         "newId": "520000",
@@ -90,7 +90,7 @@ module.exports = {
         "newName": "贵州省",
         "opened": "FALSE"
       }, {
-        "id": "31",
+        "key": "31",
         "name": "上海",
         "orderSeq": "1",
         "newId": "310000",
@@ -98,7 +98,7 @@ module.exports = {
         "newName": "上海市",
         "opened": "FALSE"
       }, {
-        "id": "53",
+        "key": "53",
         "name": "云南",
         "orderSeq": "1",
         "newId": "530000",
@@ -106,7 +106,7 @@ module.exports = {
         "newName": "云南省",
         "opened": "FALSE"
       }, {
-        "id": "10",
+        "key": "10",
         "name": "全国",
         "orderSeq": "1",
         "newId": "10",
@@ -114,7 +114,7 @@ module.exports = {
         "newName": "全国",
         "opened": "FALSE"
       }, {
-        "id": "32",
+        "key": "32",
         "name": "江苏",
         "orderSeq": "1",
         "newId": "320000",
@@ -122,7 +122,7 @@ module.exports = {
         "newName": "江苏省",
         "opened": "FALSE"
       }, {
-        "id": "54",
+        "key": "54",
         "name": "西藏",
         "orderSeq": "1",
         "newId": "540000",
@@ -130,7 +130,7 @@ module.exports = {
         "newName": "西藏自治区",
         "opened": "FALSE"
       }, {
-        "id": "11",
+        "key": "11",
         "name": "北京",
         "orderSeq": "1",
         "newId": "110000",
@@ -138,7 +138,7 @@ module.exports = {
         "newName": "北京市",
         "opened": "FALSE"
       }, {
-        "id": "33",
+        "key": "33",
         "name": "浙江",
         "orderSeq": "1",
         "newId": "330000",
@@ -146,7 +146,7 @@ module.exports = {
         "newName": "浙江省",
         "opened": "FALSE"
       }, {
-        "id": "12",
+        "key": "12",
         "name": "天津",
         "orderSeq": "1",
         "newId": "120000",
@@ -154,7 +154,7 @@ module.exports = {
         "newName": "天津市",
         "opened": "FALSE"
       }, {
-        "id": "34",
+        "key": "34",
         "name": "安徽",
         "orderSeq": "1",
         "newId": "340000",
@@ -162,7 +162,7 @@ module.exports = {
         "newName": "安徽省",
         "opened": "FALSE"
       }, {
-        "id": "13",
+        "key": "13",
         "name": "河北",
         "orderSeq": "1",
         "newId": "130000",
@@ -170,7 +170,7 @@ module.exports = {
         "newName": "河北省",
         "opened": "FALSE"
       }, {
-        "id": "35",
+        "key": "35",
         "name": "福建",
         "orderSeq": "1",
         "newId": "350000",
@@ -178,7 +178,7 @@ module.exports = {
         "newName": "福建省",
         "opened": "FALSE"
       }, {
-        "id": "14",
+        "key": "14",
         "name": "山西",
         "orderSeq": "1",
         "newId": "140000",
@@ -186,7 +186,7 @@ module.exports = {
         "newName": "山西省",
         "opened": "FALSE"
       }, {
-        "id": "36",
+        "key": "36",
         "name": "江西",
         "orderSeq": "1",
         "newId": "360000",
@@ -194,7 +194,7 @@ module.exports = {
         "newName": "江西省",
         "opened": "FALSE"
       }, {
-        "id": "15",
+        "key": "15",
         "name": "内蒙古",
         "orderSeq": "1",
         "newId": "150000",
@@ -202,7 +202,7 @@ module.exports = {
         "newName": "内蒙古自治区",
         "opened": "FALSE"
       }, {
-        "id": "37",
+        "key": "37",
         "name": "山东",
         "orderSeq": "1",
         "newId": "370000",
@@ -210,7 +210,7 @@ module.exports = {
         "newName": "山东省",
         "opened": "FALSE"
       }, {
-        "id": "81",
+        "key": "81",
         "name": "香港",
         "orderSeq": "1",
         "newId": "810000",
@@ -218,7 +218,7 @@ module.exports = {
         "newName": "香港特别行政区",
         "opened": "FALSE"
       }, {
-        "id": "61",
+        "key": "61",
         "name": "陕西",
         "orderSeq": "1",
         "newId": "610000",
@@ -226,7 +226,7 @@ module.exports = {
         "newName": "陕西省",
         "opened": "FALSE"
       }, {
-        "id": "62",
+        "key": "62",
         "name": "甘肃",
         "orderSeq": "1",
         "newId": "620000",
@@ -234,7 +234,7 @@ module.exports = {
         "newName": "甘肃省",
         "opened": "FALSE"
       }, {
-        "id": "41",
+        "key": "41",
         "name": "河南",
         "orderSeq": "1",
         "newId": "410000",
@@ -242,7 +242,7 @@ module.exports = {
         "newName": "河南省",
         "opened": "FALSE"
       }, {
-        "id": "63",
+        "key": "63",
         "name": "青海",
         "orderSeq": "1",
         "newId": "630000",
@@ -250,7 +250,7 @@ module.exports = {
         "newName": "青海省",
         "opened": "FALSE"
       }, {
-        "id": "42",
+        "key": "42",
         "name": "湖北",
         "orderSeq": "1",
         "newId": "420000",
@@ -258,7 +258,7 @@ module.exports = {
         "newName": "湖北省",
         "opened": "FALSE"
       }, {
-        "id": "64",
+        "key": "64",
         "name": "宁夏",
         "orderSeq": "1",
         "newId": "640000",
@@ -266,7 +266,7 @@ module.exports = {
         "newName": "宁夏回族自治区",
         "opened": "FALSE"
       }, {
-        "id": "21",
+        "key": "21",
         "name": "辽宁",
         "orderSeq": "1",
         "newId": "210000",
@@ -274,7 +274,7 @@ module.exports = {
         "newName": "辽宁省",
         "opened": "FALSE"
       }, {
-        "id": "43",
+        "key": "43",
         "name": "湖南",
         "orderSeq": "1",
         "newId": "430000",
@@ -282,7 +282,7 @@ module.exports = {
         "newName": "湖南省",
         "opened": "FALSE"
       }, {
-        "id": "65",
+        "key": "65",
         "name": "新疆",
         "orderSeq": "1",
         "newId": "650000",

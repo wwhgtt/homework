@@ -3,7 +3,7 @@ const connect = require('react-redux').connect;
 const actions = require('../../action/product-list/product-list.js');
 
 const Filter = require('../../component/product-list/filter/filter.jsx');
-// const MenuContainer = require('../../component/menuContainer/menuContainer.jsx');
+const MenuContainer = require('../../component/product-list/menuContainer/menuContainer.jsx');
 
 require('./application.scss');
 
@@ -25,12 +25,12 @@ const ProductListApplication = React.createClass({
   },
 
   componentDidMount() {
-    const { fetchMenuList, menuList } = this.props;
-    fetchMenuList().then(
+    const { fetchMenuList } = this.props;
+    fetchMenuList().then(() => {
       this.setState({
-        fakeMenuList: menuList
+        fakeMenuList: this.props.menuList
       })
-    )
+    })
   },
 
   render() {
@@ -39,10 +39,10 @@ const ProductListApplication = React.createClass({
     return (
       <div className="container">
         <Filter />
-        {/* {
+        {
           fakeMenuList && fakeMenuList.length ? 
-            <MenuContainer menuList={fakeMenuList} /> : '暂时无任何匹配数据'
-        } */}
+            <MenuContainer menuList = {fakeMenuList} /> : '暂时无任何匹配数据'
+        }
       </div>
     );
   },

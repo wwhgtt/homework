@@ -13,8 +13,10 @@ const ProductListApplication = React.createClass({
   propTypes: {
     // MapedActionsToProps
     fetchMenuList: React.PropTypes.func.isRequired,
+    searchMenu: React.PropTypes.func.isRequired,
     // MapedStatesToProps
-    menuList: React.PropTypes.array.isRequired
+    menuList: React.PropTypes.array.isRequired,
+    searchMenuList: React.PropTypes.array.isRequired,
   },
 
   getInitialState() {
@@ -26,19 +28,33 @@ const ProductListApplication = React.createClass({
 
   componentDidMount() {
     const { fetchMenuList } = this.props;
-    fetchMenuList().then(() => {
+    fetchMenuList();
+  },
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.searchStatus) {
       this.setState({
-        fakeMenuList: this.props.menuList
+        fakeMenuList: nextProps.searchMenuList
       })
+    } else {
+      this.setState({
+        fakeMenuList: nextProps.menuList
+      })
+    }
+  },
+  // 初始化搜索状态
+  recoverTableState: function() {
+    this.setState({
+      fakeMenuList: this.props.menuList
     })
   },
 
   render() {
     const { fakeMenuList } = this.state;
-
+    const { searchMenu } = this.props;
     return (
       <div className="container">
-        <Filter />
+        <Filter recoverTableState={this.recoverTableState} searchMenu={searchMenu} />
         {
           fakeMenuList && fakeMenuList.length ? 
             <MenuContainer menuList = {fakeMenuList} /> : '暂时无任何匹配数据'

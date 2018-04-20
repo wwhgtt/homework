@@ -17,12 +17,15 @@ const columns = [{
   }, {
     title: '操作',
     key: 'action',
-    render: (text, record) => (
-      <span>
-        <Icon type="edit" />
-        <a href="javascript:;">编辑</a>
-      </span>
-    ),
+    render: (text, record) => {
+        let url = 'edit.html?id=' + record.key;
+        return (
+            <span>
+                <Icon type="edit" />
+                <a href={url}>编辑</a>
+            </span>   
+        )
+    },
   }];
 
 module.exports = React.createClass({

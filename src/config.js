@@ -23,5 +23,6 @@ module.exports = {
   // API
   productListAPI: `${apiBase}/productList/all.json`,
   searchMenuAPI: `${apiBase}/productList/search.json`,
+  productInfoAPI: `${apiBase}/productList/info.json`,
   requestOptions,
 };

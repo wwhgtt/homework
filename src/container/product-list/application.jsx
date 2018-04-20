@@ -3,7 +3,7 @@ const connect = require('react-redux').connect;
 const actions = require('../../action/product-list/product-list.js');
 
 const Filter = require('../../component/product-list/filter/filter.jsx');
-// const MenuContainer = require('../../component/menuContainer/menuContainer.jsx');
+const MenuContainer = require('../../component/product-list/menuContainer/menuContainer.jsx');
 
 require('./application.scss');
 
@@ -13,8 +13,10 @@ const ProductListApplication = React.createClass({
   propTypes: {
     // MapedActionsToProps
     fetchMenuList: React.PropTypes.func.isRequired,
+    searchMenu: React.PropTypes.func.isRequired,
     // MapedStatesToProps
-    menuList: React.PropTypes.array.isRequired
+    menuList: React.PropTypes.array.isRequired,
+    searchMenuList: React.PropTypes.array.isRequired,
   },
 
   getInitialState() {
@@ -25,24 +27,38 @@ const ProductListApplication = React.createClass({
   },
 
   componentDidMount() {
-    const { fetchMenuList, menuList } = this.props;
-    fetchMenuList().then(
+    const { fetchMenuList } = this.props;
+    fetchMenuList();
+  },
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.searchStatus) {
       this.setState({
-        fakeMenuList: menuList
+        fakeMenuList: nextProps.searchMenuList
       })
-    )
+    } else {
+      this.setState({
+        fakeMenuList: nextProps.menuList
+      })
+    }
+  },
+  // 初始化搜索状态
+  recoverTableState: function() {
+    this.setState({
+      fakeMenuList: this.props.menuList
+    })
   },
 
   render() {
     const { fakeMenuList } = this.state;
-
+    const { searchMenu } = this.props;
     return (
       <div className="container">
-        <Filter />
-        {/* {
+        <Filter recoverTableState={this.recoverTableState} searchMenu={searchMenu} />
+        {
           fakeMenuList && fakeMenuList.length ? 
-            <MenuContainer menuList={fakeMenuList} /> : '暂时无任何匹配数据'
-        } */}
+            <MenuContainer menuList = {fakeMenuList} /> : '暂时无任何匹配数据'
+        }
       </div>
     );
   },

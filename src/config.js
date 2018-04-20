@@ -22,6 +22,6 @@ switch (process.env.NODE_ENV) {
 module.exports = {
   // API
   productListAPI: `${apiBase}/productList/all.json`,
-
+  searchMenuAPI: `${apiBase}/productList/search.json`,
   requestOptions,
 };

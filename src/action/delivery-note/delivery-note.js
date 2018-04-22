@@ -4,10 +4,13 @@ const createAction = require('redux-actions').createAction;
 const config = require('../../config');
 
 const setErrorMsg = exports.setErrorMsg = createAction('SET_ERROR_MSG', error => error);
+const setDeliveryNoteInfo = createAction('SET_DELIVERY_NOTE_INFO', info => info);
 const getUrlParam = require('../../utils/util.js').getUrlParam;
 
-exports.fetchProductInfo = () => (dispatch, getStates) =>
-  fetch(`${config.productInfoAPI}?id=${infoId}`, config.requestOptions).
+const noteId = getUrlParam('noteId');
+
+exports.fetchDeliveryInfo = () => (dispatch, getStates) =>
+  fetch(`${config.getDeliveryNoteInfoAPI}?id=${noteId}`, config.requestOptions).
     then(res => {
       if (!res.ok) {
         dispatch(setErrorMsg('获取出货单信息失败...'));
@@ -15,7 +18,7 @@ exports.fetchProductInfo = () => (dispatch, getStates) =>
       return res.json();
     }).
     then(menuData => {
-      dispatch(setProductInfo(menuData.data));
+      dispatch(setDeliveryNoteInfo(menuData.data));
     }).
     catch(err => {
       dispatch(setErrorMsg('加载出货单信息失败...'));

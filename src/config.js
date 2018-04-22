@@ -26,6 +26,6 @@ module.exports = {
   productInfoAPI: `${apiBase}/productList/info.json`,
   saveProductInfoAPI: `${apiBase}/productList/update.json`,
   submitDeliveryNoteAPI: `${apiBase}/delivery/submit.json`,
-  deliveryNoteAPI: `${apiBase}/delivery/detail.json`,
+  getDeliveryNoteInfoAPI: `${apiBase}/delivery/detail.json`,
   requestOptions,
 };

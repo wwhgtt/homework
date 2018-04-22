@@ -9,17 +9,28 @@ const DeliveryNoteApplication = React.createClass({
   displayName: 'DeliveryNoteApplication',
   propTypes: {
     // MapedActionsToProps
+    fetchDeliveryInfo: React.PropTypes.func.isRequired,
     // MapedStatesToProps
+    noteInfo: React.PropTypes.object
   },
 
   componentDidMount() {
-
+    const { fetchDeliveryInfo } = this.props;
+    fetchDeliveryInfo();
   },
 
   render() {
     return (
       <div className="container">
-        
+        {
+            noteInfo ? (
+                <div className="info">
+                
+                </div>
+            ) 
+            :
+            false
+        }
       </div>
     );
   },

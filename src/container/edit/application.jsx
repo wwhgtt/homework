@@ -143,8 +143,10 @@ const EditApplication = React.createClass({
                 </div>
                 <Icon type="plus-circle" onClick={this.createCodeInputElement} />
 
-                <Button type="danger" onClick={() => window.history.go(-1)}>返回</Button>
-                <Button type="primary" onClick={this.saveCodes}>保存</Button>
+                <div className="operation">
+                    <Button type="danger" onClick={() => window.history.go(-1)}>返回</Button>
+                    <Button type="primary" onClick={this.saveCodes}>保存</Button>
+                </div>
             </div>
           )
           :

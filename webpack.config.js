@@ -10,6 +10,9 @@ module.exports = {
     ],
     'edit-entry': [
       './src/edit.jsx',
+    ],
+    'delivery-note-entry': [
+      './src/delivery-note.jsx',
     ]
   },
   resolve: {
@@ -59,6 +62,14 @@ module.exports = {
         title: 'EditApplication',
         filename: 'edit.html',
         chunks: ['common', 'edit-entry'],
+        inject: 'body', template: './src/utils/html-webpack-plugin-template.html',
+      }
+    ),
+    new HtmlWebpackPlugin(
+      {
+        title: 'DeliveryNoteApplication',
+        filename: 'delivery-note.html',
+        chunks: ['common', 'delivery-note-entry'],
         inject: 'body', template: './src/utils/html-webpack-plugin-template.html',
       }
     ),

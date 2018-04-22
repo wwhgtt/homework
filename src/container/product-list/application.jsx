@@ -7,6 +7,7 @@ const MenuContainer = require('../../component/product-list/menuContainer/menuCo
 
 require('./application.scss');
 
+const Toast = require('../../component/mui/toast.jsx');
 
 const ProductListApplication = React.createClass({
   displayName: 'ProductListApplication',
@@ -15,10 +16,12 @@ const ProductListApplication = React.createClass({
     fetchMenuList: React.PropTypes.func.isRequired,
     searchMenu: React.PropTypes.func.isRequired,
     generateDeliveryNote: React.PropTypes.func.isRequired,
+    clearErrorMsg: React.PropTypes.func.isRequired,
     // MapedStatesToProps
     menuList: React.PropTypes.array.isRequired,
     searchMenuList: React.PropTypes.array.isRequired,
-    delivery_note_id: React.PropTypes.string
+    delivery_note_id: React.PropTypes.string,
+    errorMessage: React.PropTypes.string,
   },
 
   getInitialState() {
@@ -60,13 +63,18 @@ const ProductListApplication = React.createClass({
   },
   render() {
     const { fakeMenuList } = this.state;
-    const { searchMenu } = this.props;
+    const { searchMenu, clearErrorMsg, errorMessage } = this.props;
     return (
       <div className="container">
         <Filter recoverTableState={this.recoverTableState} searchMenu={searchMenu} generateDeliveryNote={this.generateDeliveryNote} />
         {
           fakeMenuList && fakeMenuList.length ? 
             <MenuContainer menuList = {fakeMenuList} /> : '暂时无任何匹配数据'
+        }
+        {errorMessage ?
+          <Toast errorMessage={errorMessage} clearErrorMsg={clearErrorMsg} />
+          :
+          false
         }
       </div>
     );

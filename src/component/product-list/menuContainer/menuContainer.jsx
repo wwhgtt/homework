@@ -18,7 +18,7 @@ const columns = [{
     title: '操作',
     key: 'action',
     render: (text, record) => {
-        let url = 'edit?id=' + record.key;
+        let url = 'edit.html?id=' + record.key;
         return (
             <span>
                 <Icon type="edit" />

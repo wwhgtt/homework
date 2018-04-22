@@ -6,6 +6,7 @@ import { Input, Icon, Button } from 'antd';
 
 require('./application.scss');
 
+const Toast = require('../../component/mui/toast.jsx');
 
 const EditApplication = React.createClass({
   displayName: 'EditApplication',
@@ -13,9 +14,11 @@ const EditApplication = React.createClass({
     // MapedActionsToProps
     fetchProductInfo: React.PropTypes.func.isRequired,
     saveProductInfo: React.PropTypes.func.isRequired,
+    clearErrorMsg: React.PropTypes.func.isRequired,
     // MapedStatesToProps
     productInfo: React.PropTypes.object,
     changeInfoStatus: React.PropTypes.bool.isRequired,
+    errorMessage: React.PropTypes.string,
   },
   getInitialState() {
     return {
@@ -127,7 +130,7 @@ const EditApplication = React.createClass({
     saveProductInfo(product_name, codes);
   },
   render() {
-    const { productInfo } = this.props;
+    const { productInfo, errorMessage, clearErrorMsg } = this.props;
     return (
       <div className="container">
         {
@@ -149,6 +152,11 @@ const EditApplication = React.createClass({
                 </div>
             </div>
           )
+          :
+          false
+        }
+        {errorMessage ?
+          <Toast errorMessage={errorMessage} clearErrorMsg={clearErrorMsg} />
           :
           false
         }

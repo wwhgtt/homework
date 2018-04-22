@@ -58,3 +58,6 @@ exports.generateDeliveryNote = (list) => (dispatch, getStates) => {
       dispatch(setErrorMsg('搜索信息失败...'));
     });
 }
+
+exports.clearErrorMsg = () => (dispatch, getState) =>
+  dispatch(setErrorMsg(null));

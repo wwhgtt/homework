@@ -1,8 +1,9 @@
 import Immutable from 'seamless-immutable';
 
 const defaultState = Immutable.from({
-    productInfo: null,
-    changeInfoStatus: false
+    productInfo: undefined,
+    changeInfoStatus: false,
+    errorMessage: undefined
 });
 
 module.exports = (state = defaultState, action) => {
@@ -12,6 +13,8 @@ module.exports = (state = defaultState, action) => {
       return state.set('productInfo', payload)
     case 'CHANGE_INFO_SUCCESS': 
       return state.set('changeInfoStatus', true)
+    case 'SET_ERROR_MSG':
+      return state.set('errorMessage', payload)
     default:
       return state;
   }

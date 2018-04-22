@@ -4,29 +4,51 @@ const actions = require('../../action/delivery-note/delivery-note.js');
 
 import { Table, Input, Popconfirm, Button, Icon } from 'antd';
 
+const Toast = require('../../component/mui/toast.jsx');
+
 require('./application.scss');
+
+const getTotalPrice = (noteInfo) => {
+    let prices = [];
+    noteInfo.map(item => prices.push(item.price * item.number));
+    return prices.reduce((a,b) => a + b, 0)
+};
 
 const DeliveryNoteApplication = React.createClass({
   displayName: 'DeliveryNoteApplication',
   propTypes: {
     // MapedActionsToProps
     fetchDeliveryInfo: React.PropTypes.func.isRequired,
+    saveDeliveryNote: React.PropTypes.func.isRequired,
+    clearErrorMsg: React.PropTypes.func.isRequired,
     // MapedStatesToProps
-    noteInfo: React.PropTypes.array
+    noteInfo: React.PropTypes.array,
+    errorMessage: React.PropTypes.string,
   },
   getInitialState() {
     return {
-        noteInfo: null
+        noteInfo: null,
+        totalPrice: 0
     }
   },
   componentDidMount() {
     const { fetchDeliveryInfo } = this.props;
     fetchDeliveryInfo().then(() => {
         const noteInfo = this.props.noteInfo.asMutable({ deep:true });
+        let totalPrice = getTotalPrice(noteInfo);
         this.setState({
-            noteInfo: noteInfo
+            noteInfo: noteInfo,
+            totalPrice: totalPrice
         })
     });
+  },
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.saveStatus) {
+        // 表示保存成功了
+        alert('保存成功');
+        window.location.href = "/product-list.html"
+    }
+    return false;
   },
   edit(key) {
     const newData = this.state.noteInfo;
@@ -41,10 +63,20 @@ const DeliveryNoteApplication = React.createClass({
     const target = newData.filter(item => key === item.key)[0];
     if (target) {
       target[column] = value;
-      this.setState({ noteInfo: newData });
+      let totalPrice = getTotalPrice(newData);
+      this.setState({
+        noteInfo: newData,
+        totalPrice: totalPrice
+      });
     }
   },
+  saveDeliveryNote() {
+    const { noteInfo } = this.state;
+    const { saveDeliveryNote } = this.props;
+    saveDeliveryNote(noteInfo);
+  },
   render() {
+    const { errorMessage, clearErrorMsg } = this.props;
     const { noteInfo } = this.state;
     const columns = [{
         title: '商品',
@@ -96,11 +128,26 @@ const DeliveryNoteApplication = React.createClass({
       <div className="container">
         {
             noteInfo ? (
-                <Table bordered dataSource={noteInfo} columns={columns} />
+                <div>
+                    <div className="total-price">
+                        商品总价： {this.state.totalPrice}
+                    </div>
+                    <Table bordered dataSource={noteInfo} columns={columns} />
+                    <div className="operation">
+                        <Button type="danger" onClick={() => window.history.go(-1)}>返回</Button>
+                        <Button type="primary" onClick={this.saveDeliveryNote}>保存</Button>
+                    </div>
+                </div>
             ) 
             :
             false
         }
+        {errorMessage ?
+          <Toast errorMessage={errorMessage} clearErrorMsg={clearErrorMsg} />
+          :
+          false
+        }
+
       </div>
     );
   },

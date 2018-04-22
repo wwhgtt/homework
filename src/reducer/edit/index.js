@@ -1,7 +1,7 @@
 import Immutable from 'seamless-immutable';
 
 const defaultState = Immutable.from({
-    productInfo: undefined,
+    productInfo: null,
     changeInfoStatus: false
 });
 

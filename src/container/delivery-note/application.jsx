@@ -4,14 +4,13 @@ const actions = require('../../action/delivery-note/delivery-note.js');
 
 require('./application.scss');
 
-
 const DeliveryNoteApplication = React.createClass({
   displayName: 'DeliveryNoteApplication',
   propTypes: {
     // MapedActionsToProps
     fetchDeliveryInfo: React.PropTypes.func.isRequired,
     // MapedStatesToProps
-    noteInfo: React.PropTypes.object
+    noteInfo: React.PropTypes.array
   },
 
   componentDidMount() {
@@ -20,6 +19,7 @@ const DeliveryNoteApplication = React.createClass({
   },
 
   render() {
+    const { noteInfo } = this.props;
     return (
       <div className="container">
         {

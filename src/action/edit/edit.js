@@ -47,4 +47,7 @@ exports.saveProductInfo = (name, codes) => (dispatch, getStates) => {
             dispatch(setErrorMsg('更新商品信息失败...'));
         });
 }
+
+exports.clearErrorMsg = () => (dispatch, getState) =>
+  dispatch(setErrorMsg(null));
   

@@ -10,7 +10,8 @@ module.exports = React.createClass({
   propTypes: {
     // MapedActionsToProps
     recoverTableState: React.PropTypes.func.isRequired,
-    searchMenu: React.PropTypes.func.isRequired
+    searchMenu: React.PropTypes.func.isRequired,
+    generateDeliveryNote: React.PropTypes.func.isRequired
     // MapedStatesToProps
   },
 
@@ -54,7 +55,7 @@ module.exports = React.createClass({
   },
 
   render() {
-    const { recoverTableState } = this.props;
+    const { recoverTableState, generateDeliveryNote } = this.props;
     const { searchMenuCode, searchMenuName } = this.state;
     return (
       <Row gutter={16} type="flex" className="table-filter">
@@ -71,7 +72,7 @@ module.exports = React.createClass({
             </Button>
             <Button onClick={this.recoverTableState}>重置</Button>
           </ButtonGroup>
-          <Button type="primary" type="ghost">
+          <Button type="primary" type="ghost" onClick={generateDeliveryNote}>
             生成出货单
           </Button>
         </Col>

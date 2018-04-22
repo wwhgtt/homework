@@ -21,6 +21,7 @@ exports.fetchDeliveryInfo = () => (dispatch, getStates) =>
       dispatch(setDeliveryNoteInfo(menuData.data));
     }).
     catch(err => {
+      console.log(err)
       dispatch(setErrorMsg('加载出货单信息失败...'));
     });
 

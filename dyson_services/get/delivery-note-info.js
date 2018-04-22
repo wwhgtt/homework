@@ -4,7 +4,7 @@ module.exports = {
       data: [{
         "key": "64",
         "name": "宁夏",
-        "orderSeq": "1",
+        "number": "5",
         "newId": "640000",
         "newPid": "0",
         "price": 10,
@@ -13,7 +13,7 @@ module.exports = {
       }, {
         "key": "21",
         "name": "辽宁",
-        "orderSeq": "1",
+        "number": "1",
         "newId": "210000",
         "newPid": "0",
         "price": 1,
@@ -22,7 +22,7 @@ module.exports = {
       }, {
         "key": "43",
         "name": "湖南",
-        "orderSeq": "1",
+        "number": "2",
         "newId": "430000",
         "newPid": "0",
         "price": 8,
@@ -31,7 +31,7 @@ module.exports = {
       }, {
         "key": "65",
         "name": "新疆",
-        "orderSeq": "1",
+        "number": "3",
         "newId": "650000",
         "newPid": "0",
         "price": 9,
